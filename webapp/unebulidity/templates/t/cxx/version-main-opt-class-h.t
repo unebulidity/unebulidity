@@ -13,7 +13,7 @@
 %# or otherwise) arising in any way out of the use of this software, 
 %# even if advised of the possibility of such damage.
 %#
-%#   File: main-opt-class-h.t
+%#   File: version-main-opt-class-h.t
 %#
 %# Author: $author$
 %#   Date: 12/11/2022

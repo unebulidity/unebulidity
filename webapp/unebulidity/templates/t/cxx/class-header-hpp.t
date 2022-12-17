@@ -40,29 +40,12 @@ template <%Class_template_parameters%>
 %%if-then(%Class_access_type%,%(
 )%)%%
 %%if-then(%
-%%if(%Implements%,%(    typedef %TImplements% c_Implements, cImplements, CImplements, Implements, implements;
-)%)%%
-%%if(%Extends%,%(    typedef %TExtends% c_Extends, cExtends, CExtends, Extends, extends;
-)%)%%
-%%if(%Classt%,%(    typedef %Classt% c_Derives, cDerives, CDerives, Derives, derives;
-)%)%%
+%%include(%Include_path%/class-header-implements-extends-derives-hxx.t)%%
 %,%(
 )%)%%
 %%if-then(%
 %%then-if(%
-%%if(%IsCopy_constructor%,%(    %Copy_constructor_type%%Classt%%(()%const %Classt% &copy%())%%
-%%if(%Extends%,%(: extends%(()%copy%())%)%)%%
-% {
-    }
-)%)%%
-%%if(%IsConstructor%,%(    %Constructor_type%%Classt%%(()%%())%%
-% {
-    }
-)%)%%
-%%if(%IsDestructor%,%(    %Destructor_type%~%Classt%%(()%%())%%
-% {
-    }
-)%)%%
+%%include(%Include_path%/class-header-constructor-destructor-hxx.t)%%
 %,%(    /// constructor / destructor
 )%)%%
 %,%(

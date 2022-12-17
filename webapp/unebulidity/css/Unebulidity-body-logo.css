@@ -48,6 +48,7 @@
     border: 0px;
     border-style: solid;
     border-color: white; 
+    border-radius: 180px;
     background-color: transparent;  
     position: relative;
     cursor: pointer;
@@ -62,7 +63,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 400px 400px;
-    border-radius: 70px;
+    border-radius: 180px;
     vertical-align: bottom;
 }
 .body-logo-label {
@@ -79,11 +80,12 @@
     background-color: transparent; 
     transition: .5s ease;
     font-size: 40px;
+    font-weight: bolder;
     font-family: Arial;
     text-align: center;
  }
 .body-logo-icon:hover .body-logo-label-text {
-    opacity: .75;
+    opacity: .50;
 }
 /*
 ** ...

@@ -16,7 +16,21 @@
 %#   File: Framework.t
 %#
 %# Author: $author$
-%#   Date: 12/10/2022
+%#   Date: 12/10/2022, 12/16/2022
 %########################################################################
 %with(%
-%%(unebulidity)%)%
+%is_include_path,%(%else-then(%is_include_path%,%(%is_Include_path%)%)%)%,%
+%include_path,%(%else-then(%if-no(%is_include_path%,,%(%include_path%)%)%,%(%if-no(%is_include_path%,,%(%filepath(%input%)%)%)%)%)%)%,%
+%Include_path,%(%else-then(%if-no(%is_include_path%,,%(%Include_path%)%)%,%(%if-no(%is_include_path%,,%(%include_path%)%)%)%)%)%,%
+%INCLUDE_PATH,%(%else-then(%INCLUDE_PATH%,%(%toupper(%Include_path%)%)%)%)%,%
+%include_path,%(%else-then(%_include_path%,%(%tolower(%Include_path%)%)%)%)%,%
+%is_framework_application,%(%else-then(%is_framework_application%,%(%is_Framework_application%)%)%)%,%
+%framework_application,%(%else-then(%if-no(%is_framework_application%,,%(%framework_application%)%)%,%(%if-no(%is_framework_application%,,%(%
+%Uebulidity%
+%)%)%)%)%)%,%
+%Framework_application,%(%else-then(%if-no(%is_framework_application%,,%(%Framework_application%)%)%,%(%if-no(%is_framework_application%,,%(%framework_application%)%)%)%)%)%,%
+%FRAMEWORK_APPLICATION,%(%else-then(%FRAMEWORK_APPLICATION%,%(%toupper(%Framework_application%)%)%)%)%,%
+%framework_application,%(%else-then(%_framework_application%,%(%tolower(%Framework_application%)%)%)%)%,%
+%%(%
+%%framework_application%%
+%)%)%
