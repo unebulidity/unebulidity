@@ -33,7 +33,11 @@
     <div class="form">
 
     File: <input name="File" value=""></input>[vstudio][.vstudio]
-    <input type="radio" name="Extension" value="vstudio" unchecked="checked">.vstudio</input>
+    <input type="radio" name="Extension" value="vcproj" unchecked="checked">.vcproj</input>
+    <input type="radio" name="Extension" value="vcprops" unchecked="checked">.vcprops</input>
+    <input type="radio" name="Extension" value="vcxproj" unchecked="checked">.vcxproj</input>
+    <input type="radio" name="Extension" value="props" unchecked="checked">.props</input>
+    <input type="radio" name="Extension" value="sln" unchecked="checked">.sln</input>
     <input type="radio" name="Extension" value="" checked="checked">no</input>
     <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
     <br/>
@@ -41,8 +45,8 @@
     Template: <select name="FormTemplate">
     <option value="../templates/t/VisualStudio/vstudio-sln.t">VisualStudio Solution (2005..) -- .sln</option>
     <option value=""></option>
-    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">.vstudio (../templates/t/VisualStudio/vstudio-vcproj.t)</option>
-    <option value="../templates/t/VisualStudio/vsprops-vsprops.t" selected="selected">VisualStudio Properties (2005..2008) -- .vsprops</option>
+    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">VisualStudio Project (2005..2008) -- .vcproj</option>
+    <option value="../templates/t/VisualStudio/vsprops-vsprops.t">VisualStudio Properties (2005..2008) -- .vsprops</option>
     <option value="../templates/t/VisualStudio/vcproj-vsprops.t">VisualStudio Common Properties (2005..2008) -- vcproj.vsprops</option>
     <option value="../templates/t/VisualStudio/vcversion-vsprops.t">VisualStudio VCVersion Properties (2005..2008) -- vcversion.vsprops</option>
     <option value="../templates/t/VisualStudio/windows-vsprops.t">VisualStudio Windows Properties (2005..2008) -- windows.vsprops</option>
@@ -58,13 +62,6 @@
     <option value=""></option>
     <option value="/unebulidity-cgi/cgi">cgi parameters &nbsp;&nbsp; (/unebulidity-cgi/cgi)</option>
     <option value="/unebulidity-cgi/cgicatch">catch cgi parameters &nbsp;&nbsp; (/unebulidity-cgi/cgicatch)</option>
-    <option value=""/>
-    <option value=""></option>
-    <option value="/unebulidity/application/templates/t/VisualStudio/application-code-workspace.t">application VisualStudioCode workspace (/unebulidity/application/templates/t/VisualStudio/application-code-workspace.t)</option>
-    <option value=""></option>
-    <option value="/unebulidity/application/templates/t/t/parameters.t">application t parameters &nbsp;&nbsp; (/unebulidity/application/templates/t/t/parameters.t)</option>
-    <option value="/unebulidity/application/templates/t/t/functions.t">application t functions &nbsp;&nbsp; (/unebulidity/application/templates/t/t/functions.t)</option>
-    <option value=""></option>
     </select>
     <br/>
 
@@ -92,16 +89,16 @@
     <br/>
 
     <br/>
-    Repository: <input name="Repository" value=""></input>[repository]
+    Repository: <input name="Repository" value=""></input>[unebulidity]
     <input name="is_Repository" value="no" type="checkbox" unchecked="checked">no</input>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    Depends: <input name="Repository_depends" value="" size="30"></input>[depends]
+    Depends: <input name="Repository_depends" value="" size="30"></input>[asteraede]
     <input name="is_Repository_depends" value="no" type="checkbox" checked="checked">no</input>
     <br/>
-    <b></b>Framework:<input name="Framework" value=""/><b></b>[framework]
+    <b></b>Framework:<input name="Framework" value=""/><b></b>[unebulidity]
     <input type="checkbox" name="is_Framework" value="no" unchecked="checked">no</input>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b></b>Depends:<input name="Depends" value=""/><b></b>[depends]
+    <b></b>Depends:<input name="Depends" value=""/><b></b>[rostra;nadir;fila;crono]
     <input type="checkbox" name="is_Depends" value="no" checked="checked">no</input>
     <br/>
 
@@ -163,7 +160,7 @@
     </select>
     <br/>
     Action: <select name="FormAction">
-    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">.vstudio (../templates/t/VisualStudio/vstudio-vcproj.t)</option>
+    <option value="../templates/t/VisualStudio/vstudio-vcproj.t">VisualStudio Project (2005..2008) -- .vcproj</option>
     <option value=""></option>
     <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
     <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
