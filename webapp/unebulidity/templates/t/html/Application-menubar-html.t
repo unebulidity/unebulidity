@@ -13,10 +13,10 @@
 %# or otherwise) arising in any way out of the use of this software, 
 %# even if advised of the possibility of such damage.
 %#
-%#   File: Application-title-html.t
+%#   File: Application-menubar-html.t
 %#
 %# Author: $author$
-%#   Date: 12/16/2022
+%#   Date: 12/20/2022
 %########################################################################
 %with(%
 %is_include_path,%(%else-then(%is_include_path%,%(%is_Include_path%)%)%)%,%
@@ -24,20 +24,29 @@
 %Include_path,%(%else-then(%if-no(%is_include_path%,,%(%Include_path%)%)%,%(%if-no(%is_include_path%,,%(%include_path%)%)%)%)%)%,%
 %INCLUDE_PATH,%(%else-then(%INCLUDE_PATH%,%(%toupper(%Include_path%)%)%)%)%,%
 %include_path,%(%else-then(%_include_path%,%(%tolower(%Include_path%)%)%)%)%,%
-%is_title,%(%else-then(%is_title%,%(%is_Title%)%)%)%,%
-%title,%(%else-then(%if-no(%is_title%,,%(%title%)%)%,%(%if-no(%is_title%,,%(%
-%%Application%%then-if(%else-then(%DoWhich%,%(%else-then(%DoWhat%,%(%Page%)%)%)%)%,%( - )%)%%
+%is_application,%(%else-then(%is_application%,%(%is_Application%)%)%)%,%
+%application,%(%else-then(%if-no(%is_application%,,%(%application%)%)%,%(%if-no(%is_application%,,%(%
+%%else-then(%include(%Include_path%/../t/Application.t)%,%(Application)%)%%
 %)%)%)%)%)%,%
-%Title,%(%else-then(%if-no(%is_title%,,%(%Title%)%)%,%(%if-no(%is_title%,,%(%title%)%)%)%)%)%,%
-%TITLE,%(%else-then(%TITLE%,%(%toupper(%Title%)%)%)%)%,%
-%title,%(%else-then(%_title%,%(%tolower(%Title%)%)%)%)%,%
+%Application,%(%else-then(%if-no(%is_application%,,%(%Application%)%)%,%(%if-no(%is_application%,,%(%application%)%)%)%)%)%,%
+%APPLICATION,%(%else-then(%APPLICATION%,%(%toupper(%Application%)%)%)%)%,%
+%application,%(%else-then(%_application%,%(%tolower(%Application%)%)%)%)%,%
+%is_part,%(%else-then(%is_part%,%(%is_Part%)%)%)%,%
+%part,%(%else-then(%if-no(%is_part%,,%(%part%)%)%,%(%if-no(%is_part%,,%(menubar)%)%)%)%)%,%
+%Part,%(%else-then(%if-no(%is_part%,,%(%Part%)%)%,%(%if-no(%is_part%,,%(%part%)%)%)%)%)%,%
+%PART,%(%else-then(%PART%,%(%toupper(%Part%)%)%)%)%,%
+%part,%(%else-then(%_part%,%(%tolower(%Part%)%)%)%)%,%
 %%(%
+%%include(%Include_path%/Application-file-html.t)%%
 %
-        <!--
-        =====================================================================
-        === title
-        =====================================================================
-        -->
-        <title>%Title%</title>
+<!--
+=====================================================================
+=== menubar
+=====================================================================
+-->
+<ul class="menubar">
+    <li class="home"><a href="%Application%-home.html">home</a></li>
+    <li class="home"><a href="%Application%-tools.html">tools</a></li>
+</ul>
 %
 %)%)%
