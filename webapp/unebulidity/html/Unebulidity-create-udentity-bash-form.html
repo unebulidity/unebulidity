@@ -15,12 +15,12 @@
 === or otherwise) arising in any way out of the use of this software, 
 === even if advised of the possibility of such damage.
 ===
-===   File: Unebulidity-create-application-html-form-form.html
+===   File: Unebulidity-create-udentity-bash-form.html
 ===
 === Author: $author$
-===   Date: 12/20/2022
+===   Date: 12/22/2022
 ===========================================================================
-=== Application=Unebulidity Page=create-application-html-form Part=form
+=== Application=Unebulidity Page=create-udentity-bash Part=form
 -->
 
 <!--
@@ -28,20 +28,26 @@
 === form
 =====================================================================
 -->
-<form name="Form" method="POST" action="../templates/t/html/Application-form-html.t"
+<form name="Form" method="POST" action="../templates/t/bash/udentity-bash.t"
  onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
     <div class="form">
 
-    File: <input name="File" value=""></input>[html][.html]
-    <input type="radio" name="Extension" value="xhtml" unchecked="checked">.xhtml</input>
-    <input type="radio" name="Extension" value="html" unchecked="checked">.html</input>
-    <input type="radio" name="Extension" value="htm" unchecked="checked">.htm</input>
+    File: <input name="File" value=""></input>[bash][.bash]
+    <input type="radio" name="Extension" value="bash" unchecked="checked">.bash</input>
+    <input type="radio" name="Extension" value="sh" unchecked="checked">.sh</input>
     <input type="radio" name="Extension" value="" checked="">no</input>
+    <input type="checkbox" name="is_Extension" value="no" unchecked="checked">no</input>
     <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
     <br/>
 
     Template: <select name="FormTemplate">
-    <option value="../templates/t/html/Application-form-html.t">Application form .html file (../templates/t/html/Application-form-html.t)</option>
+    <option value="../templates/t/bash/udentity-bash.t">udentity bash script (../templates/t/bash/udentity-bash.t)</option>
+    <option value="../templates/t/bash/utility-bash.t">utility bash script (../templates/t/bash/utility-bash.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/bash/tarme-bash.t">tarme bash script (../templates/t/bash/tarme-bash.t)</option>
+    <option value="../templates/t/bash/tarmv-bash.t">tarmv bash script (../templates/t/bash/tarmv-bash.t)</option>
+    <option value=""></option>
+    <option value="../templates/t/bash/bash.t">bash script (../templates/t/bash/bash.t)</option>
     <option value=""></option>
     <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
     <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>
@@ -53,37 +59,20 @@
     <br/>
 
     <br/>
-    Application:<input name="Application" value=""></input>[Unebulidity]
-    <input type="checkbox" name="is_Application" value="no" unchecked="checked">no</input>
-    Page:<input name="Page" value=""></input>[Page]
-    <input type="checkbox" name="is_Page" value="no" unchecked="checked">no</input>
-    Part:<input name="Part" value=""></input>[part]
-    <input type="checkbox" name="is_Part" value="no" unchecked="checked">no</input>
+    <b>udentity=</b><input name="Udentity" size="10" value=""/>[udentity]<b></b>
+    <input type="checkbox" name="is_Udentity" value="no" unchecked="checked">no</input>
     <br/>
-
-    Do:<input name="Do" value=""></input>[]
-    <input type="checkbox" name="is_Do" value="no" unchecked="checked">no</input>
-    What:<input name="What" value=""></input>[]
-    <input type="checkbox" name="is_What" value="no" unchecked="checked">no</input>
-    Which:<input name="Which" value=""></input>[]
-    <input type="checkbox" name="is_Which" value="no" unchecked="checked">no</input>
-    Thing:<input name="Thing" value=""></input>[]
-    <input type="checkbox" name="is_Thing" value="no" unchecked="checked">no</input>
+    <b>plain=</b><input name="Plain" size="10" value=""/>[$dirname'/'$udentity'-plain.txt']<b></b>
+    <input type="checkbox" name="is_Plain" value="no" unchecked="checked">no</input>
     <br/>
-
+    <b>cipher=</b><input name="Cipher" size="10" value=""/>[$dirname'/'$udentity'.txt']<b></b>
+    <input type="checkbox" name="is_Cipher" value="no" unchecked="checked">no</input>
     <br/>
-    <b>&lt;form&nbsp;&nbsp;action="</b>
-    <b></b><input name="Action_path" value=""></input>[../templates/t]<b>/</b>
-    <b></b><input name="Action_type" value=""></input>[t]<b>/</b>
-    <b></b><input name="Action_base" value=""></input><b>.</b>
-    <b></b><input name="Action_extension" value="">[t]</input><b></b>
-    <b>"&gt;</b>
+    <b>ecipher=</b><input name="Ecipher" size="10" value=""/>['%if(%Cipher%,ecipher)%']<b></b>
+    <input type="checkbox" name="is_Ecipher" value="no" unchecked="checked">no</input>
     <br/>
-    <b>&nbsp;&nbsp;&lt;select&gt;&lt;option&gt;</b>
-    <b></b><input name="Option_text" value=""></input><b></b>
-    <b>&lt;/option&gt;&lt;/select&gt;</b>
-    <br/>
-    <b>&lt;/form&gt;</b>
+    <b>dcipher=</b><input name="Dcipher" size="10" value=""/>['%if(%Cipher%,dcipher)%']<b></b>
+    <input type="checkbox" name="is_Dcipher" value="no" unchecked="checked">no</input>
     <br/>
 
     <br/>
@@ -118,7 +107,7 @@
     </select>
     <br/>
     Action: <select name="FormAction">
-    <option value="../templates/t/html/Application-form-html.t">Application form .html file (../templates/t/html/Application-form-html.t)</option>
+    <option value="../templates/t/bash/udentity-bash.t">udentity bash script (../templates/t/bash/udentity-bash.t)</option>
     <option value=""></option>
     <option value="../templates/t/t/parameters.t">t parameters &nbsp;&nbsp; (../templates/t/t/parameters.t)</option>
     <option value="../templates/t/t/functions.t">t functions &nbsp;&nbsp; (../templates/t/t/functions.t)</option>

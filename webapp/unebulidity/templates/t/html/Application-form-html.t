@@ -43,33 +43,76 @@
 %Template_path,%(%else-then(%if-no(%is_template_path%,,%(%Template_path%)%)%,%(%if-no(%is_template_path%,,%(%template_path%)%)%)%)%)%,%
 %TEMPLATE_PATH,%(%else-then(%TEMPLATE_PATH%,%(%toupper(%Template_path%)%)%)%)%,%
 %template_path,%(%else-then(%_template_path%,%(%tolower(%Template_path%)%)%)%)%,%
+%is_template_t_extension,%(%else-then(%is_template_t_extension%,%(%is_Template_t_extension%)%)%)%,%
+%template_t_extension,%(%else-then(%if-no(%is_template_t_extension%,,%(%template_t_extension%)%)%,%(%if-no(%is_template_t_extension%,,%(%
+%t%
+%)%)%)%)%)%,%
+%Template_t_extension,%(%else-then(%if-no(%is_template_t_extension%,,%(%Template_t_extension%)%)%,%(%if-no(%is_template_t_extension%,,%(%template_t_extension%)%)%)%)%)%,%
+%TEMPLATE_T_EXTENSION,%(%else-then(%TEMPLATE_T_EXTENSION%,%(%toupper(%Template_t_extension%)%)%)%)%,%
+%template_t_extension,%(%else-then(%_template_t_extension%,%(%tolower(%Template_t_extension%)%)%)%)%,%
+%is_template_t_path,%(%else-then(%is_template_t_path%,%(%is_Template_t_path%)%)%)%,%
+%template_t_path,%(%else-then(%if-no(%is_template_t_path%,,%(%template_t_path%)%)%,%(%if-no(%is_template_t_path%,,%(%
+%%if-then(%Template_path%,%(/%Template_t_extension%)%)%%
+%)%)%)%)%)%,%
+%Template_t_path,%(%else-then(%if-no(%is_template_t_path%,,%(%Template_t_path%)%)%,%(%if-no(%is_template_t_path%,,%(%template_t_path%)%)%)%)%)%,%
+%TEMPLATE_T_PATH,%(%else-then(%TEMPLATE_T_PATH%,%(%toupper(%Template_t_path%)%)%)%)%,%
+%template_t_path,%(%else-then(%_template_t_path%,%(%tolower(%Template_t_path%)%)%)%)%,%
+%is_template_action_path,%(%else-then(%is_template_action_path%,%(%is_Template_action_path%)%)%)%,%
+%template_action_path,%(%else-then(%if-no(%is_template_action_path%,,%(%template_action_path%)%)%,%(%if-no(%is_template_action_path%,,%(%
+%%else-then(%Action_path%,%(%Template_t_path%)%)%%
+%)%)%)%)%)%,%
+%Template_action_path,%(%else-then(%if-no(%is_template_action_path%,,%(%Template_action_path%)%)%,%(%if-no(%is_template_action_path%,,%(%template_action_path%)%)%)%)%)%,%
+%TEMPLATE_ACTION_PATH,%(%else-then(%TEMPLATE_ACTION_PATH%,%(%toupper(%Template_action_path%)%)%)%)%,%
+%template_action_path,%(%else-then(%_template_action_path%,%(%tolower(%Template_action_path%)%)%)%)%,%
 %is_template_type,%(%else-then(%is_template_type%,%(%is_Template_type%)%)%)%,%
 %template_type,%(%else-then(%if-no(%is_template_type%,,%(%template_type%)%)%,%(%if-no(%is_template_type%,,%(%
-%t%
+%%else-then(%Action_type%,%(%Template_t_extension%)%)%%
 %)%)%)%)%)%,%
 %Template_type,%(%else-then(%if-no(%is_template_type%,,%(%Template_type%)%)%,%(%if-no(%is_template_type%,,%(%template_type%)%)%)%)%)%,%
 %TEMPLATE_TYPE,%(%else-then(%TEMPLATE_TYPE%,%(%toupper(%Template_type%)%)%)%)%,%
 %template_type,%(%else-then(%_template_type%,%(%tolower(%Template_type%)%)%)%)%,%
+%is_template_type_extension,%(%else-then(%is_template_type_extension%,%(%is_Template_type_extension%)%)%)%,%
+%template_type_extension,%(%else-then(%if-no(%is_template_type_extension%,,%(%template_type_extension%)%)%,%(%if-no(%is_template_type_extension%,,%(%
+%%Template_type%%
+%)%)%)%)%)%,%
+%Template_type_extension,%(%else-then(%if-no(%is_template_type_extension%,,%(%Template_type_extension%)%)%,%(%if-no(%is_template_type_extension%,,%(%template_type_extension%)%)%)%)%)%,%
+%TEMPLATE_TYPE_EXTENSION,%(%else-then(%TEMPLATE_TYPE_EXTENSION%,%(%toupper(%Template_type_extension%)%)%)%)%,%
+%template_type_extension,%(%else-then(%_template_type_extension%,%(%tolower(%Template_type_extension%)%)%)%)%,%
 %is_template_base,%(%else-then(%is_template_base%,%(%is_Template_base%)%)%)%,%
 %template_base,%(%else-then(%if-no(%is_template_base%,,%(%template_base%)%)%,%(%if-no(%is_template_base%,,%(%
+%%else-then(%Action_base%,%(%Template_type%)%)%%
 %)%)%)%)%)%,%
 %Template_base,%(%else-then(%if-no(%is_template_base%,,%(%Template_base%)%)%,%(%if-no(%is_template_base%,,%(%template_base%)%)%)%)%)%,%
 %TEMPLATE_BASE,%(%else-then(%TEMPLATE_BASE%,%(%toupper(%Template_base%)%)%)%)%,%
 %template_base,%(%else-then(%_template_base%,%(%tolower(%Template_base%)%)%)%)%,%
+%is_template_type_base,%(%else-then(%is_template_type_base%,%(%is_Template_type_base%)%)%)%,%
+%template_type_base,%(%else-then(%if-no(%is_template_type_base%,,%(%template_type_base%)%)%,%(%if-no(%is_template_type_base%,,%(%
+%%Template_type_extension%%
+%)%)%)%)%)%,%
+%Template_type_base,%(%else-then(%if-no(%is_template_type_base%,,%(%Template_type_base%)%)%,%(%if-no(%is_template_type_base%,,%(%template_type_base%)%)%)%)%)%,%
+%TEMPLATE_TYPE_BASE,%(%else-then(%TEMPLATE_TYPE_BASE%,%(%toupper(%Template_type_base%)%)%)%)%,%
+%template_type_base,%(%else-then(%_template_type_base%,%(%tolower(%Template_type_base%)%)%)%)%,%
 %is_template_extension,%(%else-then(%is_template_extension%,%(%is_Template_extension%)%)%)%,%
 %template_extension,%(%else-then(%if-no(%is_template_extension%,,%(%template_extension%)%)%,%(%if-no(%is_template_extension%,,%(%
-%%Template_type%%
+%%else-then(%Action_extension%,%(%Template_t_extension%)%)%%
 %)%)%)%)%)%,%
 %Template_extension,%(%else-then(%if-no(%is_template_extension%,,%(%Template_extension%)%)%,%(%if-no(%is_template_extension%,,%(%template_extension%)%)%)%)%)%,%
 %TEMPLATE_EXTENSION,%(%else-then(%TEMPLATE_EXTENSION%,%(%toupper(%Template_extension%)%)%)%)%,%
 %template_extension,%(%else-then(%_template_extension%,%(%tolower(%Template_extension%)%)%)%)%,%
 %is_template_file_base,%(%else-then(%is_template_file_base%,%(%is_Template_file_base%)%)%)%,%
 %template_file_base,%(%else-then(%if-no(%is_template_file_base%,,%(%template_file_base%)%)%,%(%if-no(%is_template_file_base%,,%(%
-%%if-then(%Template_base%,%(-)%)%%Template_extension%%
+%%Template_base%%
 %)%)%)%)%)%,%
 %Template_file_base,%(%else-then(%if-no(%is_template_file_base%,,%(%Template_file_base%)%)%,%(%if-no(%is_template_file_base%,,%(%template_file_base%)%)%)%)%)%,%
 %TEMPLATE_FILE_BASE,%(%else-then(%TEMPLATE_FILE_BASE%,%(%toupper(%Template_file_base%)%)%)%)%,%
 %template_file_base,%(%else-then(%_template_file_base%,%(%tolower(%Template_file_base%)%)%)%)%,%
+%is_template_file_extension,%(%else-then(%is_template_file_extension%,%(%is_Template_file_extension%)%)%)%,%
+%template_file_extension,%(%else-then(%if-no(%is_template_file_extension%,,%(%template_file_extension%)%)%,%(%if-no(%is_template_file_extension%,,%(%
+%%Template_extension%%
+%)%)%)%)%)%,%
+%Template_file_extension,%(%else-then(%if-no(%is_template_file_extension%,,%(%Template_file_extension%)%)%,%(%if-no(%is_template_file_extension%,,%(%template_file_extension%)%)%)%)%)%,%
+%TEMPLATE_FILE_EXTENSION,%(%else-then(%TEMPLATE_FILE_EXTENSION%,%(%toupper(%Template_file_extension%)%)%)%)%,%
+%template_file_extension,%(%else-then(%_template_file_extension%,%(%tolower(%Template_file_extension%)%)%)%)%,%
 %is_template_cgi_path,%(%else-then(%is_template_cgi_path%,%(%is_Template_cgi_path%)%)%)%,%
 %template_cgi_path,%(%else-then(%if-no(%is_template_cgi_path%,,%(%template_cgi_path%)%)%,%(%if-no(%is_template_cgi_path%,,%(%
 %/%application%-cgi%
@@ -98,6 +141,20 @@
 %Template_cgithrow,%(%else-then(%if-no(%is_template_cgithrow%,,%(%Template_cgithrow%)%)%,%(%if-no(%is_template_cgithrow%,,%(%template_cgithrow%)%)%)%)%)%,%
 %TEMPLATE_CGITHROW,%(%else-then(%TEMPLATE_CGITHROW%,%(%toupper(%Template_cgithrow%)%)%)%)%,%
 %template_cgithrow,%(%else-then(%_template_cgithrow%,%(%tolower(%Template_cgithrow%)%)%)%)%,%
+%is_option_action,%(%else-then(%is_option_action%,%(%is_Option_action%)%)%)%,%
+%option_action,%(%else-then(%if-no(%is_option_action%,,%(%option_action%)%)%,%(%if-no(%is_option_action%,,%(%
+%%Template_action_path%/%Template_type%/%Template_file_base%.%Template_file_extension%%
+%)%)%)%)%)%,%
+%Option_action,%(%else-then(%if-no(%is_option_action%,,%(%Option_action%)%)%,%(%if-no(%is_option_action%,,%(%option_action%)%)%)%)%)%,%
+%OPTION_ACTION,%(%else-then(%OPTION_ACTION%,%(%toupper(%Option_action%)%)%)%)%,%
+%option_action,%(%else-then(%_option_action%,%(%tolower(%Option_action%)%)%)%)%,%
+%is_option_text,%(%else-then(%is_option_text%,%(%is_Option_text%)%)%)%,%
+%option_text,%(%else-then(%if-no(%is_option_text%,,%(%option_text%)%)%,%(%if-no(%is_option_text%,,%(%
+%.%Template_type% file%
+%)%)%)%)%)%,%
+%Option_text,%(%else-then(%if-no(%is_option_text%,,%(%Option_text%)%)%,%(%if-no(%is_option_text%,,%(%option_text%)%)%)%)%)%,%
+%OPTION_TEXT,%(%else-then(%OPTION_TEXT%,%(%toupper(%Option_text%)%)%)%)%,%
+%option_text,%(%else-then(%_option_text%,%(%tolower(%Option_text%)%)%)%)%,%
 %%(%
 %%include(%Include_path%/Application-file-html.t)%%
 %
@@ -106,23 +163,21 @@
 === form
 =====================================================================
 -->
-<form name="Form" method="POST" action="%Template_path%/t/%Template_type%/%Template_file_base%.t"
+<form name="Form" method="POST" action="%Option_action%"
  onSubmit="return setFormSubmit(getFormValue2('FormTemplate','FormAction','Form'),getFormValue('FormMethod','Form'),'Form')">
     <div class="form">
 
-    File: <input name="File" value=""></input>[html][.html]
-    <input type="radio" name="Extension" value="xhtml" unchecked="checked">.xhtml</input>
-    <input type="radio" name="Extension" value="html" checked="checked">.html</input>
-    <input type="radio" name="Extension" value="htm" unchecked="checked">.htm</input>
-    <input type="radio" name="Extension" value="" unchecked="">no</input>
+    File: <input name="File" value=""></input>[%Template_type_base%][.%Template_type_extension%]
+    <input type="radio" name="Extension" value="%Template_type_extension%" unchecked="checked">.%Template_type_extension%</input>
+    <input type="radio" name="Extension" value="" checked="">no</input>
     <input type="checkbox" name="is_File" value="no" unchecked="checked">no</input>
     <br/>
 
     Template: <select name="FormTemplate">
-    <option value="%Template_path%/t/%Template_type%/%Template_file_base%.t">.%Template_extension% file (%Template_path%/t/%Template_type%/%Template_file_base%.t)</option>
+    <option value="%Option_action%">%Option_text% (%Option_action%)</option>
     <option value=""></option>
-    <option value="%Template_path%/t/t/parameters.t">t parameters &nbsp;&nbsp; (%Template_path%/t/t/parameters.t)</option>
-    <option value="%Template_path%/t/t/functions.t">t functions &nbsp;&nbsp; (%Template_path%/t/t/functions.t)</option>
+    <option value="%Template_t_path%/t/parameters.t">t parameters &nbsp;&nbsp; (%Template_t_path%/t/parameters.t)</option>
+    <option value="%Template_t_path%/t/functions.t">t functions &nbsp;&nbsp; (%Template_t_path%/t/functions.t)</option>
     <option value=""></option>
     <option value="%Template_cgi_path%/%Template_cgi%">cgi parameters &nbsp;&nbsp; (%Template_cgi_path%/%Template_cgi%)</option>
     <option value="%Template_cgi_path%/%Template_cgicatch%">catch cgi parameters &nbsp;&nbsp; (%Template_cgi_path%/%Template_cgicatch%)</option>
@@ -133,7 +188,7 @@
     <br/>
     Copyright:<input name="Genesis" size="10" value=""/>[1988]<b></b>
     <input type="checkbox" name="is_Genesis" value="no" unchecked="checked">no</input>
-    <b>-</b><input name="Year" size="10" value=""/>[%year()%]<b></b>
+    <b>-</b><input name="Year" size="10" value=""/>[%%year%(()%%())%%%]<b></b>
     <input type="checkbox" name="is_Year" value="no" unchecked="checked">no</input>
     <b>&nbsp;&nbsp;</b>Organization:<input name="Organization" value=""></input>[$organization$]
     <input type="checkbox" name="is_Organization" value="no" unchecked="checked">no</input>
@@ -141,7 +196,7 @@
     <br/>
     Author:<input name="Author" value=""></input>[$author$]
     <input type="checkbox" name="is_Author" value="no" unchecked="checked">no</input>
-    <b>&nbsp;&nbsp;</b>Date:<input name="Date" size="10" value=""/>[%%date%(()%%())%]<b></b>
+    <b>&nbsp;&nbsp;</b>Date:<input name="Date" size="10" value=""/>[%%date%(()%%())%%%]<b></b>
     <input type="checkbox" name="is_Date" value="no" unchecked="checked">no</input>
     <b>&nbsp;&nbsp;</b><select name="Claims">
     <option value=""></option>
@@ -162,10 +217,10 @@
     </select>
     <br/>
     Action: <select name="FormAction">
-    <option value="%Template_path%/t/%Template_type%/%Template_file_base%.t">.%Template_extension% file (%Template_path%/t/%Template_type%/%Template_file_base%.t)</option>
+    <option value="%Option_action%">%Option_text% (%Option_action%)</option>
     <option value=""></option>
-    <option value="%Template_path%/t/t/parameters.t">t parameters &nbsp;&nbsp; (%Template_path%/t/t/parameters.t)</option>
-    <option value="%Template_path%/t/t/functions.t">t functions &nbsp;&nbsp; (%Template_path%/t/t/functions.t)</option>
+    <option value="%Template_t_path%/t/parameters.t">t parameters &nbsp;&nbsp; (%Template_t_path%/t/parameters.t)</option>
+    <option value="%Template_t_path%/t/functions.t">t functions &nbsp;&nbsp; (%Template_t_path%/t/functions.t)</option>
     <option value=""></option>
     <option value="%Template_cgi_path%/%Template_cgi%">cgi parameters &nbsp;&nbsp; (%Template_cgi_path%/%Template_cgi%)</option>
     <option value="%Template_cgi_path%/%Template_cgicatch%">catch cgi parameters &nbsp;&nbsp; (%Template_cgi_path%/%Template_cgicatch%)</option>
