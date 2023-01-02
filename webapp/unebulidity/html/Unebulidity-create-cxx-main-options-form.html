@@ -77,7 +77,7 @@
 
     <b>#define %FRAMEWORK%_%APP%_%CONSOLE%_%APPLICATION%_%MAIN%_OPTIONS</b>
     <input name="Parameters" value="s:long=name"/>[s:long=name]<b>;...</b>
-    <input type="checkbox" name="is_Parameters" value="no" checked="checked">no</input>
+    <input type="checkbox" name="is_Parameters" value="no" unchecked="checked">no</input>
     <br/>
 
     <b>#define %FRAMEWORK%_%APP%_%CONSOLE%_%APPLICATION%_%MAIN%_NAME_OPT "</b>
@@ -106,13 +106,13 @@
     <br/>
 
     <br/>
-    <b>class </b><input name="Main_class" size="8" value="main_opt"></input><b>[%Main%]: public </b>
-    <input name="Extends_path" value=""></input><b>[%Framework%::%App%::%Console%]::</b><input name="Extends" size="8" value=""></input><b>[%Main%]</b>
+    <b>class </b><input name="Class" size="8" value="main_opt"></input><b>[%Main%]: public </b>
+    <input name="Extends_namespace" value=""></input><b>[%Framework%::%App%::%Console%]::</b><input name="Extends" size="8" value=""></input><b>[%Main%]</b>
     <b> {</b>
-    <input type="checkbox" name="is_Main_class" value="no" unchecked="checked">no</input>
+    <input type="checkbox" name="is_Class" value="no" unchecked="checked">no</input>
     <br/>
     <b>&nbsp;&nbsp;&nbsp;&nbsp;virtual const char_t* %Name%_option_usage(const char_t*&amp; optarg, const struct option* longopt)</b>
-    <input name="IsUsage" value="yes" type="checkbox" checked="checked"></input><b></b>
+    <input name="IsUsage" value="no" type="checkbox" unchecked="checked">no</input><b></b>
     <br/>
     <b>} /// class %Class%</b>
     <br/>

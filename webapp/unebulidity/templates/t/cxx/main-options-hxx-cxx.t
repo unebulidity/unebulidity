@@ -1,5 +1,5 @@
 %########################################################################
-%# Copyright (c) 1988-2022 $organization$
+%# Copyright (c) 1988-2023 $organization$
 %#
 %# This software is provided by the author and contributors ``as is'' 
 %# and any express or implied warranties, including, but not limited to, 
@@ -13,10 +13,10 @@
 %# or otherwise) arising in any way out of the use of this software, 
 %# even if advised of the possibility of such damage.
 %#
-%#   File: main-class-hxx-cxx.t
+%#   File: main-options-hxx-cxx.t
 %#
 %# Author: $author$
-%#   Date: 12/13/2022
+%#   Date: 1/2/2023
 %########################################################################
 %with(%
 %is_include_path,%(%else-then(%is_include_path%,%(%is_Include_path%)%)%)%,%
@@ -45,13 +45,13 @@
 %Console,%(%else-then(%if-no(%is_console%,,%(%Console%)%)%,%(%if-no(%is_console%,,%(%console%)%)%)%)%)%,%
 %CONSOLE,%(%else-then(%CONSOLE%,%(%toupper(%Console%)%)%)%)%,%
 %console,%(%else-then(%_console%,%(%tolower(%Console%)%)%)%)%,%
-%is_applicatiom,%(%else-then(%is_applicatiom%,%(%is_Applicatiom%)%)%)%,%
-%applicatiom,%(%else-then(%if-no(%is_applicatiom%,,%(%applicatiom%)%)%,%(%if-no(%is_applicatiom%,,%(%
-%%else-then(%include(%Include_path%/../t/source-applicatiom.t)%,%(%App%/%Console%)%)%%
+%is_application,%(%else-then(%is_application%,%(%is_Application%)%)%)%,%
+%application,%(%else-then(%if-no(%is_application%,,%(%application%)%)%,%(%if-no(%is_application%,,%(%
+%%else-then(%include(%Include_path%/../t/source-application.t)%,%(application)%)%%
 %)%)%)%)%)%,%
-%Applicatiom,%(%else-then(%if-no(%is_applicatiom%,,%(%Applicatiom%)%)%,%(%if-no(%is_applicatiom%,,%(%applicatiom%)%)%)%)%)%,%
-%APPLICATIOM,%(%else-then(%APPLICATIOM%,%(%toupper(%Applicatiom%)%)%)%)%,%
-%applicatiom,%(%else-then(%_applicatiom%,%(%tolower(%Applicatiom%)%)%)%)%,%
+%Application,%(%else-then(%if-no(%is_application%,,%(%Application%)%)%,%(%if-no(%is_application%,,%(%application%)%)%)%)%)%,%
+%APPLICATION,%(%else-then(%APPLICATION%,%(%toupper(%Application%)%)%)%)%,%
+%application,%(%else-then(%_application%,%(%tolower(%Application%)%)%)%)%,%
 %is_framework,%(%else-then(%is_framework%,%(%is_Framework%)%)%)%,%
 %framework,%(%else-then(%if-no(%is_framework%,,%(%framework%)%)%,%(%if-no(%is_framework%,,%(%
 %%else-then(%include(%Include_path%/../t/source-framework.t)%,%(%Xos%)%)%%
@@ -75,7 +75,7 @@
 %what,%(%else-then(%_what%,%(%tolower(%What%)%)%)%)%,%
 %is_namespace,%(%else-then(%is_namespace%,%(%is_Namespace%)%)%)%,%
 %namespace,%(%else-then(%if-no(%is_namespace%,,%(%namespace%)%)%,%(%if-no(%is_namespace%,,%(%
-%%Framework%/%Applicatiom%/%What%%
+%%Framework%/%App%/%Console%/%Application%%
 %)%)%)%)%)%,%
 %Namespace,%(%else-then(%if-no(%is_namespace%,,%(%Namespace%)%)%,%(%if-no(%is_namespace%,,%(%namespace%)%)%)%)%)%,%
 %NAMESPACE,%(%else-then(%NAMESPACE%,%(%toupper(%Namespace%)%)%)%)%,%
@@ -87,13 +87,48 @@
 %Namespace_path,%(%else-then(%if-no(%is_namespace_path%,,%(%Namespace_path%)%)%,%(%if-no(%is_namespace_path%,,%(%namespace_path%)%)%)%)%)%,%
 %NAMESPACE_PATH,%(%else-then(%NAMESPACE_PATH%,%(%toupper(%Namespace_path%)%)%)%)%,%
 %namespace_path,%(%else-then(%_namespace_path%,%(%tolower(%Namespace_path%)%)%)%)%,%
+%is_namespace_ifndef,%(%else-then(%is_namespace_ifndef%,%(%is_Namespace_ifndef%)%)%)%,%
+%namespace_ifndef,%(%else-then(%if-no(%is_namespace_ifndef%,,%(%namespace_ifndef%)%)%,%(%if-no(%is_namespace_ifndef%,,%(%
+%%parse(%Namespace_path%,/,,%(_)%)%%
+%)%)%)%)%)%,%
+%Namespace_ifndef,%(%else-then(%if-no(%is_namespace_ifndef%,,%(%Namespace_ifndef%)%)%,%(%if-no(%is_namespace_ifndef%,,%(%namespace_ifndef%)%)%)%)%)%,%
+%NAMESPACE_IFNDEF,%(%else-then(%NAMESPACE_IFNDEF%,%(%toupper(%Namespace_ifndef%)%)%)%)%,%
+%namespace_ifndef,%(%else-then(%_namespace_ifndef%,%(%tolower(%Namespace_ifndef%)%)%)%)%,%
+%is_extends_namespace,%(%else-then(%is_extends_namespace%,%(%is_Extends_namespace%)%)%)%,%
+%extends_namespace,%(%else-then(%if-no(%is_extends_namespace%,,%(%extends_namespace%)%)%,%(%if-no(%is_extends_namespace%,,%(%
+%%Framework%/%App%/%Console%%
+%)%)%)%)%)%,%
+%Extends_namespace,%(%else-then(%if-no(%is_extends_namespace%,,%(%Extends_namespace%)%)%,%(%if-no(%is_extends_namespace%,,%(%extends_namespace%)%)%)%)%)%,%
+%EXTENDS_NAMESPACE,%(%else-then(%EXTENDS_NAMESPACE%,%(%toupper(%Extends_namespace%)%)%)%)%,%
+%extends_namespace,%(%else-then(%_extends_namespace%,%(%tolower(%Extends_namespace%)%)%)%)%,%
+%is_extends_namespace_ns,%(%else-then(%is_extends_namespace_ns%,%(%is_Extends_namespace_ns%)%)%)%,%
+%extends_namespace_ns,%(%else-then(%if-no(%is_extends_namespace_ns%,,%(%extends_namespace_ns%)%)%,%(%if-no(%is_extends_namespace_ns%,,%(%
+%%parse(%Extends_namespace%,/,,%(::)%)%%
+%)%)%)%)%)%,%
+%Extends_namespace_ns,%(%else-then(%if-no(%is_extends_namespace_ns%,,%(%Extends_namespace_ns%)%)%,%(%if-no(%is_extends_namespace_ns%,,%(%extends_namespace_ns%)%)%)%)%)%,%
+%EXTENDS_NAMESPACE_NS,%(%else-then(%EXTENDS_NAMESPACE_NS%,%(%toupper(%Extends_namespace_ns%)%)%)%)%,%
+%extends_namespace_ns,%(%else-then(%_extends_namespace_ns%,%(%tolower(%Extends_namespace_ns%)%)%)%)%,%
+%is_extends_namespace_path,%(%else-then(%is_extends_namespace_path%,%(%is_Extends_namespace_path%)%)%)%,%
+%extends_namespace_path,%(%else-then(%if-no(%is_extends_namespace_path%,,%(%extends_namespace_path%)%)%,%(%if-no(%is_extends_namespace_path%,,%(%
+%%parse(%Extends_namespace%,::,,%(/)%)%%
+%)%)%)%)%)%,%
+%Extends_namespace_path,%(%else-then(%if-no(%is_extends_namespace_path%,,%(%Extends_namespace_path%)%)%,%(%if-no(%is_extends_namespace_path%,,%(%extends_namespace_path%)%)%)%)%)%,%
+%EXTENDS_NAMESPACE_PATH,%(%else-then(%EXTENDS_NAMESPACE_PATH%,%(%toupper(%Extends_namespace_path%)%)%)%)%,%
+%extends_namespace_path,%(%else-then(%_extends_namespace_path%,%(%tolower(%Extends_namespace_path%)%)%)%)%,%
+%is_extends_namespace_ifndef,%(%else-then(%is_extends_namespace_ifndef%,%(%is_Extends_namespace_ifndef%)%)%)%,%
+%extends_namespace_ifndef,%(%else-then(%if-no(%is_extends_namespace_ifndef%,,%(%extends_namespace_ifndef%)%)%,%(%if-no(%is_extends_namespace_ifndef%,,%(%
+%%parse(%Extends_namespace_path%,/,,%(_)%)%%
+%)%)%)%)%)%,%
+%Extends_namespace_ifndef,%(%else-then(%if-no(%is_extends_namespace_ifndef%,,%(%Extends_namespace_ifndef%)%)%,%(%if-no(%is_extends_namespace_ifndef%,,%(%extends_namespace_ifndef%)%)%)%)%)%,%
+%EXTENDS_NAMESPACE_IFNDEF,%(%else-then(%EXTENDS_NAMESPACE_IFNDEF%,%(%toupper(%Extends_namespace_ifndef%)%)%)%)%,%
+%extends_namespace_ifndef,%(%else-then(%_extends_namespace_ifndef%,%(%tolower(%Extends_namespace_ifndef%)%)%)%)%,%
 %is_class,%(%else-then(%is_class%,%(%is_Class%)%)%)%,%
-%class,%(%else-then(%if-no(%is_class%,,%(%class%)%)%,%(%if-no(%is_class%,,%(main)%)%)%)%)%,%
+%class,%(%else-then(%if-no(%is_class%,,%(%class%)%)%,%(%if-no(%is_class%,,%(main_opt)%)%)%)%)%,%
 %Class,%(%else-then(%if-no(%is_class%,,%(%Class%)%)%,%(%if-no(%is_class%,,%(%class%)%)%)%)%)%,%
 %CLASS,%(%else-then(%CLASS%,%(%toupper(%Class%)%)%)%)%,%
 %class,%(%else-then(%_class%,%(%tolower(%Class%)%)%)%)%,%
 %is_extends,%(%else-then(%is_extends%,%(%is_Extends%)%)%)%,%
-%extends,%(%else-then(%if-no(%is_extends%,,%(%extends%)%)%,%(%if-no(%is_extends%,,%(main_opt)%)%)%)%)%,%
+%extends,%(%else-then(%if-no(%is_extends%,,%(%extends%)%)%,%(%if-no(%is_extends%,,%(main)%)%)%)%)%,%
 %Extends,%(%else-then(%if-no(%is_extends%,,%(%Extends%)%)%,%(%if-no(%is_extends%,,%(%extends%)%)%)%)%)%,%
 %EXTENDS,%(%else-then(%EXTENDS%,%(%toupper(%Extends%)%)%)%)%,%
 %extends,%(%else-then(%_extends%,%(%tolower(%Extends%)%)%)%)%,%
@@ -104,7 +139,7 @@
 %implements,%(%else-then(%_implements%,%(%tolower(%Implements%)%)%)%)%,%
 %is_include,%(%else-then(%is_include%,%(%is_Include%)%)%)%,%
 %include,%(%else-then(%if-no(%is_include%,,%(%include%)%)%,%(%if-no(%is_include%,,%(%
-%%Namespace_path%/%Extends%%then-if(%Extension%,%(.)%)%%
+%%Extends_namespace_path%/%Extends%%then-if(%Extension%,%(.)%)%%
 %)%)%)%)%)%,%
 %Include,%(%else-then(%if-no(%is_include%,,%(%Include%)%)%,%(%if-no(%is_include%,,%(%include%)%)%)%)%)%,%
 %INCLUDE,%(%else-then(%INCLUDE%,%(%toupper(%Include%)%)%)%)%,%
@@ -115,7 +150,7 @@
 %BASE,%(%else-then(%BASE%,%(%toupper(%Base%)%)%)%)%,%
 %base,%(%else-then(%_base%,%(%tolower(%Base%)%)%)%)%,%
 %is_file_prefix,%(%else-then(%is_file_prefix%,%(%is_File_prefix%)%)%)%,%
-%file_prefix,%(%else-then(%if-no(%is_file_prefix%,,%(%file_prefix%)%)%,%(%if-no(%is_file_prefix%,,%(main-class-)%)%)%)%)%,%
+%file_prefix,%(%else-then(%if-no(%is_file_prefix%,,%(%file_prefix%)%)%,%(%if-no(%is_file_prefix%,,%(main-options-)%)%)%)%)%,%
 %File_prefix,%(%else-then(%if-no(%is_file_prefix%,,%(%File_prefix%)%)%,%(%if-no(%is_file_prefix%,,%(%file_prefix%)%)%)%)%)%,%
 %FILE_PREFIX,%(%else-then(%FILE_PREFIX%,%(%toupper(%File_prefix%)%)%)%)%,%
 %file_prefix,%(%else-then(%_file_prefix%,%(%tolower(%File_prefix%)%)%)%)%,%

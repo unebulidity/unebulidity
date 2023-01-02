@@ -30,13 +30,13 @@
 %If_defined__cplusplus_begin%%
 %/// class %Class%t
 template 
-<class TExtends = %Namespace_ns%::version::%Extends%t<>,  class TImplements = %Implements%>
+<class TExtends = %Extends_namespace_ns%::%Extends%t<>,  class TImplements = %Implements%>
 
 class %if-then(%Class_exported%, )%%Class%t: virtual public TImplements, public TExtends {
 public:
-    typedef TImplements c_Implements, cImplements, CImplements, Implements, implements;
-    typedef TExtends c_Extends, cExtends, CExtends, Extends, extends;
-    typedef %Class%t c_Derives, cDerives, CDerives, Derives, derives;
+    typedef TImplements %else-then(%Typedef_implements%,%(c_Implements, cImplements, CImplements, Implements, implements)%)%;
+    typedef TExtends %else-then(%Typedef_extends%,%(c_Extends, cExtends, CExtends, Extends, extends)%)%;
+    typedef %Class%t %else-then(%Typedef_derives%,%(c_Derives, cDerives, CDerives, Derives, derives)%)%;
 
     typedef typename extends::char_t char_t;
     typedef typename extends::end_char_t end_char_t;

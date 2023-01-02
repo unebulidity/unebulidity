@@ -46,6 +46,7 @@
 %%File_ifndef_begin%%
 %%then-if(%Includes%%Sys_includes%,%(
 )%)%%
+%%include(%Include_path%/%File_prefix%define-%Header%.t)%%
 %%Namespace_begin%%
 %%include(%Include_path%/%File_prefix%%Header%.t)%%
 %%Namespace_end%%
